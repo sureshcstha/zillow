@@ -28,9 +28,18 @@ class RealtorListingController extends Controller
 //                    ->mostRecent()
                     ->filter($filters)
                     ->withCount('images')
+                    ->withCount('offers')
                     ->paginate(6)
                     ->withQueryString()
             ]
+        );
+    }
+
+    public function show(Listing $listing)
+    {
+        return inertia(
+            'Realtor/Show',
+            ['listing' => $listing->load('offers')]
         );
     }
 
