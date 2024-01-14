@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ListingOfferController;
 use App\Http\Controllers\RealtorListingImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
@@ -25,6 +26,10 @@ Route::get('/show', [IndexController::class, 'show'])->middleware('auth');;
 
 Route::resource('listing', ListingController::class)
     ->only(['index', 'show']);
+
+Route::resource('listing.offer', ListingOfferController::class)
+    ->middleware('auth')
+    ->only(['store']);
 
 Route::get('login', [AuthController::class, 'create'])->name('login');
 Route::post('login', [AuthController::class, 'store'])->name('login.store');
