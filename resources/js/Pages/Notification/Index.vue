@@ -5,7 +5,7 @@
         <div v-for="notification in notifications.data" :key="notification.id" class="border-b border-gray-200 dark:border-gray-800 py-4 flex justify-between items-center">
             <div>
         <span v-if="notification.type === 'App\\Notifications\\OfferMade'">
-          Offer <Price :price="notification.data.amount" /> for
+          Offer of <Price :price="notification.data.amount" /> for
           <Link
               :href="route('realtor.listing.show', { listing: notification.data.listing_id })"
               class="text-indigo-600 dark:text-indigo-400"
