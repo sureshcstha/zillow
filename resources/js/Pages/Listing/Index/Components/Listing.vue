@@ -10,7 +10,7 @@
                         class="text-2xl font-bold"
                     />
                     <div class="text-xs text-gray-500">
-                        <Price :price="monthlyPayment" /> /mo
+                        Est. <Price :price="monthlyPayment" /> /mo
                     </div>
                 </div>
                 <ListingSpace :listing="listing" class="text-lg" />
@@ -32,6 +32,6 @@ import Price from '@/Components/Price.vue'
 import { useMonthlyPayment } from '@/Composables/useMonthlyPayment'
 const props = defineProps({listing: Object})
 const { monthlyPayment } = useMonthlyPayment(
-    props.listing.price, 2.5, 25,
+    props.listing.price, 6, 30,
 )
 </script>
