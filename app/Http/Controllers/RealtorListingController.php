@@ -64,9 +64,9 @@ class RealtorListingController extends Controller
     {
         $request->user()->listings()->create(
             $request->validate([
-                'beds' => 'required|integer|min:0|max:20',
-                'baths' => 'required|integer|min:0|max:20',
-                'area' => 'required|integer|min:15|max:1500',
+                'beds' => 'required|integer|min:1|max:20',
+                'baths' => 'required|integer|min:1|max:20',
+                'area' => 'required|integer|min:500|max:10000',
                 'city' => 'required',
                 'code' => 'required',
                 'street' => 'required',
@@ -93,9 +93,9 @@ class RealtorListingController extends Controller
     {
         $listing->update(
             $request->validate([
-                'beds' => 'required|integer|min:0|max:20',
-                'baths' => 'required|integer|min:0|max:20',
-                'area' => 'required|integer|min:15|max:1500',
+                'beds' => 'required|integer|min:1|max:20',
+                'baths' => 'required|integer|min:1|max:20',
+                'area' => 'required|integer|min:500|max:10000',
                 'city' => 'required',
                 'code' => 'required',
                 'street' => 'required',

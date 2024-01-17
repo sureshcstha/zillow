@@ -1,6 +1,6 @@
 <template>
     <Box>
-        <template #header>Offer Made</template>
+        <template #header>Your Offer:</template>
 
         <Price :price="offer.amount" class="text-3xl" />
 

@@ -10,7 +10,7 @@
                         class="text-2xl font-bold"
                     />
                     <div class="text-xs text-gray-500">
-                        <Price :price="monthlyPayment" /> pm
+                        <Price :price="monthlyPayment" /> /mo
                     </div>
                 </div>
                 <ListingSpace :listing="listing" class="text-lg" />

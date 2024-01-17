@@ -22,7 +22,7 @@
 
             <Box>
                 <template #header>
-                    Monthly Payment
+                    Monthly Payment Calculator
                 </template>
                 <div>
                     <label class="label">Interest rate ({{ interestRate }}%)</label>
@@ -40,25 +40,25 @@
                     />
 
                     <div class="text-gray-600 dark:text-gray-300 mt-2">
-                        <div class="text-gray-400">Your monthly payment</div>
-                        <Price :price="monthlyPayment" class="text-3xl" />
+                        <div class="text-gray-400">Your estimated payment</div>
+                        <Price :price="monthlyPayment" class="text-3xl" /> /mo
                     </div>
 
                     <div class="mt-2 text-gray-500">
                         <div class="flex justify-between">
-                            <div>Total paid</div>
+                            <div>Total</div>
                             <div>
                                 <Price :price="totalPaid" class="font-medium" />
                             </div>
                         </div>
                         <div class="flex justify-between">
-                            <div>Principal paid</div>
+                            <div>Principal</div>
                             <div>
                                 <Price :price="listing.price" class="font-medium" />
                             </div>
                         </div>
                         <div class="flex justify-between">
-                            <div>Interest paid</div>
+                            <div>Interest</div>
                             <div>
                                 <Price :price="totalInterest" class="font-medium" />
                             </div>
@@ -91,8 +91,8 @@ import { computed } from 'vue'
 import OfferMade from './Show/Components/OfferMade.vue'
 import EmptyState from '@/Components/UI/EmptyState.vue'
 
-const interestRate = ref(2.5)
-const duration = ref(25)
+const interestRate = ref(6)
+const duration = ref(30)
 const props = defineProps({
     listing: Object,
     offerMade: Object,
